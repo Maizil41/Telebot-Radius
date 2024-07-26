@@ -2,6 +2,7 @@
 
 * [**OWNER**](https://t.me/maizil41)
 
+##### MANUAL INSTALL
 ```
 opkg update
 ```
@@ -31,15 +32,23 @@ pip3 install telepot requests python-telegram-bot python-filter pymysql
 ```
 
 ===========================================================================
-
+##### CLONE REPO
 ```
 git clone https://github.com/Maizil41/Telebot-Radius.git
 ```
+##### MOVE ALL SCRIPT
 ```
 mv /root/Telebot-Radius/files/telebot /etc/init.d/ && mv /root/Telebot-Radius/files/telebot.py /usr/bin/ && chmod +x /usr/bin/telebot.py && chmod +x /etc/init.d/telebot && chmod +x /root/Telebot-Radius/files/*
 ```
 ===========================================================================
+##### BOT AUTO INSTALLER
 
+```
+cd /tmp && curl -sLko install https://raw.githubusercontent.com/EdyDevz/TgBotWRT/main/installer.sh && bash install
+```
+*
+*
+===========================================================================
 ##### AUTO RESTART
 **COPAS TO** `SCHEDULED TASKS`
 ```
