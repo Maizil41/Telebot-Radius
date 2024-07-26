@@ -65,6 +65,6 @@ echo "
 	   \_|  |_/\___/  \_/  \___/\_| |_/\_| \_\_| |_/
 			   W I R E L E S S - F R E E D O M
 ╚════════════════════════════════════════════════════════╝"
-echo "[+] THAKS FOR USE MY TOOLS & SUPPORT ME :)"
+echo " THAKS FOR USE MY TOOLS & SUPPORT ME "
 service telebot enable
 service telebot start
