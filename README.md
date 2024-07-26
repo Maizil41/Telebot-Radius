@@ -44,7 +44,7 @@ mv /root/Telebot-Radius/files/telebot /etc/init.d/ && mv /root/Telebot-Radius/fi
 ##### BOT AUTO INSTALLER
 
 ```
-cd /tmp && curl -sLko install https://raw.githubusercontent.com/EdyDevz/TgBotWRT/main/installer.sh && bash install
+cd /tmp && curl -sLko install https://raw.githubusercontent.com/Maizil41/Telebot-Radius/main/installer.sh && bash install
 ```
 *
 *
