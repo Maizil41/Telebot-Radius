@@ -27,13 +27,7 @@ opkg install python3-venv
 opkg install python3-pip
 ```
 ```
-pip3 install python-telegram-bot
-```
-```
-pip3 install python-filter
-```
-```
-pip3 install pymysql
+pip3 install telepot requests python-telegram-bot python-filter pymysql
 ```
 
 ===========================================================================
