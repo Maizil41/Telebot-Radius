@@ -1,5 +1,6 @@
-# Telebot-Radius
- Telegram bot for daloradius billing
+### TELEGRAM BOT FOR OPENWRT DALORADIUS
+
+* [**OWNER**](https://t.me/maizil41)
 
 ```
 opkg update
