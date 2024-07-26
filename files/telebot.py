@@ -14,7 +14,7 @@ from telegram.ext import Application, CommandHandler, CallbackContext, CallbackQ
 
 
 # Membaca token dan chat ID admin dari berkas token.txt
-with open('/root/Telebot/auth', 'r') as token_file:
+with open('/root/Telebot-Radius/files/auth', 'r') as token_file:
     lines = token_file.readlines()
     if len(lines) >= 2:
         TOKEN = lines[0].strip()
@@ -24,7 +24,7 @@ with open('/root/Telebot/auth', 'r') as token_file:
         exit()
         
 # File JSON untuk menyimpan kode dan saldo pengguna
-PROFILES_JSON_FILE = '/root/Telebot/profiles.json'  # Sesuaikan dengan path yang sesuai di OpenWRT
+PROFILES_JSON_FILE = '/root/Telebot-Radius/files/profiles.json'  # Sesuaikan dengan path yang sesuai di OpenWRT
 
 # Daftar ID admin yang diizinkan
 ADMIN_IDS = set([USER_ID])
