@@ -7,6 +7,9 @@
 opkg update
 ```
 ```
+opkg install nano
+```
+```
 opkg install git
 ```
 ```
