@@ -40,6 +40,10 @@ git clone https://github.com/Maizil41/Telebot-Radius.git
 ```
 mv /root/Telebot-Radius/files/telebot /etc/init.d/ && mv /root/Telebot-Radius/files/telebot.py /usr/bin/ && chmod +x /usr/bin/telebot.py && chmod +x /etc/init.d/telebot && chmod +x /root/Telebot-Radius/files/*
 ```
+##### CHANGE BOT TOKEN
+```
+nano /root/Telebot-Radius/files/auth
+```
 ===========================================================================
 ##### BOT AUTO INSTALLER
 
