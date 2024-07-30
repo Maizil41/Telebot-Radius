@@ -7,35 +7,14 @@
 opkg update
 ```
 ```
-opkg install nano
-```
-```
-opkg install git
-```
-```
-opkg install jq
-```
-```
-opkg install sysstat
-```
-```
-opkg install git-http
-```
-```
-opkg install python3
-```
-```
-opkg install python3-venv
-```
-```
-opkg install python3-pip
+opkg install nano git jq sysstat git-http python3 python3-venv python3-pip
 ```
 ```
 pip3 install telepot requests python-telegram-bot python-filter pymysql
 ```
 
 ===========================================================================
-##### CLONE REPO
+##### CLONE REPOSITORY
 ```
 git clone https://github.com/Maizil41/Telebot-Radius.git
 ```
@@ -48,7 +27,7 @@ mv /root/Telebot-Radius/files/telebot /etc/init.d/ && mv /root/Telebot-Radius/fi
 nano /root/Telebot-Radius/files/auth
 ```
 ===========================================================================
-##### BOT AUTO INSTALLER
+##### AUTO INSTALLER
 
 ```
 cd /tmp && curl -sLko install https://raw.githubusercontent.com/Maizil41/Telebot-Radius/main/installer.sh && bash install
@@ -57,7 +36,7 @@ cd /tmp && curl -sLko install https://raw.githubusercontent.com/Maizil41/Telebot
 *
 ===========================================================================
 ##### AUTO RESTART
-**COPAS TO** `SCHEDULED TASKS`
+**COPY PASTE TO** `SCHEDULED TASKS`
 ```
 */30 * * * * service telebot restart
 ```
