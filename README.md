@@ -7,16 +7,10 @@
 opkg update
 ```
 ```
-opkg install python3
+opkg install git git-http python3 python3-pip
 ```
 ```
-opkg install python3-pip
-```
-```
-pip3 install pymysql 
-```
-```
-pip3 install python-telegram-bot
+pip3 install pymysql python-telegram-bot
 ```
 ```
 pip install python-telegram-bot[job-queue]
