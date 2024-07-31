@@ -1,0 +1,20 @@
+{
+    "keyboard": [
+        [
+            {"text": "5", "callback_data": "quantity_5"},
+            {"text": "10", "callback_data": "quantity_10"}
+        ],
+        [
+            {"text": "15", "callback_data": "quantity_15"},
+            {"text": "20", "callback_data": "quantity_20"}
+        ],
+        [
+            {"text": "25", "callback_data": "quantity_25"},
+            {"text": "50", "callback_data": "quantity_50"}
+        ],
+        [
+            {"text": "75", "callback_data": "quantity_75"},
+            {"text": "100", "callback_data": "quantity_100"}
+        ]
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "duration_mapping": {
+        "duration_1": 1000,
+        "duration_2": 2000,
+        "duration_3": 3000,
+        "duration_4": 4000,
+        "duration_5": 5000,
+        "duration_6": 25000,
+        "duration_7": 50000
+    },
+    "duration_names": {
+        "duration_1": "Paket_3Jam",
+        "duration_2": "Paket_6Jam",
+        "duration_3": "Paket_9Jam",
+        "duration_4": "Paket_12Jam",
+        "duration_5": "Paket_1Hari",
+        "duration_6": "Paket_7Hari",
+        "duration_7": "Paket_30Hari"
+    },
+    "duration_price": {
+        "duration_1": "Rp.1000_3Jam",
+        "duration_2": "Rp.2000_6Jam",
+        "duration_3": "Rp.3000_9Jam",
+        "duration_4": "Rp.4000_12Jam",
+        "duration_5": "Rp.5000_1Hari",
+        "duration_6": "Rp.25000_7Hari",
+        "duration_7": "Rp.50000_30Hari"
+    }
+}

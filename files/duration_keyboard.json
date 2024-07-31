@@ -1,0 +1,19 @@
+{
+    "keyboard": [
+        [
+            {"text": "3 Jam | Rp.1000", "callback_data": "duration_1"},
+            {"text": "6 Jam | Rp.2000", "callback_data": "duration_2"}
+        ],
+        [
+            {"text": "9 Jam | Rp.3000", "callback_data": "duration_3"},
+            {"text": "12 Jam | Rp.4000", "callback_data": "duration_4"}
+        ],
+        [
+            {"text": "1 Hari | Rp.5000", "callback_data": "duration_5"},
+            {"text": "7 Hari | Rp.25000", "callback_data": "duration_6"}
+        ],
+        [
+            {"text": "30 Hari | Rp.50000", "callback_data": "duration_7"}
+        ]
+    ]
+}
