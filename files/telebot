@@ -4,12 +4,12 @@
 START=99
 
 start() {
-    echo "Starting BOT"
+    echo "Starting TeleBOT"
     python3 /usr/bin/telebot.py > /var/log/telebot.log 2>&1 &
 }
 
 stop() {
-    echo "Stopping BOT"
+    echo "Stopping TeleBOT"
     killall python3
 }
 
