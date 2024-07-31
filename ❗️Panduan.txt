@@ -1,0 +1,76 @@
+====================================================================================================================================
+BUDAYAKAN MEMBACA SEBELUM BERTANYA !!!
+
+Jika menanyakan pertanyaan yang jawabannya sudah ada disini, gak akan saya jawab, jadi baca sampai habis
+
+karena capek ngetik panjang-panjang tapi GK DIBACAA
+
+====================================================================================================================================
+Untuk mengubah alamat ip printicket dan ip login link buka folder > root/Telebot-Radius/files/ip_address.json
+
+ip_lan > ip printicket
+
+ip_chilli > ip login link
+
+====================================================================================================================================
+Untuk mengubah mengubah Bot Token dan Admin ID buka folder > root/Telebot-Radius/files/auth
+
+* Bot Token isi paling atas
+
+* ID Admin isi dibawah Bot Token
+
+====================================================================================================================================
+Untuk mengubah nama plan, nama profile, dan harga paket :
+
+Buka folder > root/Telebot-Radius/files/durations.json
+
+*duration_mapping adalah > Jumlah saldo user yang akan terpotong saat membeli kode
+
+*duration_names adalah   > Nama Profile daloRADIUS (Bisa disesuaikan dengan profile masing-masing)
+
+*duration_price adalah   > Nama plan daloRADIUS (Bisa disesuaikan dengan plan masing-masing)
+
+
+Note* "duration_1" sampai "duration_7" itu adalah kode yang akan menghubungkan 3 poin diatas, mungkin tidak perlu mengubah bagian itu,
+      
+       kalo mau dirubah juga silahkan, tapi jangan tanyakan ke saya kalo eror.
+
+====================================================================================================================================
+
+Untuk mengubah pilihan jumlah kode yang akan di generate oleh admin buka folder > root/Telebot-Radius/files/quantity_keyboard.json
+
+contoh cara mengubahnya :
+
+{"text": "5", "callback_data": "quantity_5"} > ini adalah jumlah yang akan mencetak 5 voucher,
+
+misalnya kita ingin mengubah menjadi 1000 voucher berarti seperti ini :
+
+{"text": "1000", "callback_data": "quantity_1000"}
+
+====================================================================================================================================
+
+Untuk mengubah tampilan harga pada tombol "DAPATKAN KODE" buka > root/Telebot-Radius/files/duration_keyboard.json
+
+contoh cara mengubahnya :
+
+{"text": "3 Jam | Rp.1000", "callback_data": "duration_1"} > yang perlu diubah adalah bagian "3 Jam | Rp.1000"
+
+"duration_1" tidak perlu diubah karena ini berhubungan dengan 3 poin yang diatas
+
+====================================================================================================================================
+
+# Hati-hati saat mengedit, jika ada kesalahan titik koma spasi, bisa mengakibatkan eror dan bot tidak bisa berfungsi
+
+# Setiap kali anda melakukan perubahan pada file-file tersebut, anda harus merestart bot agar semua perubahan berlaku
+
+# Jangan menghapus file yang ada di folder root/Telebot-Radius/files/ karena setiap file itu ada fungsinya masing masing
+
+# Gunakan sewajarnya, jangan mengedit bagian yang tidak perlu diedit, jika ada pertanyaan error karena human eror, tidak saya jawab
+
+# Cara restart bot > buka system > startup > cari telebot > klik restart
+  
+====================================================================================================================================
+
+                                          ⓒ  2024 - Mutiara-Wrt by Maizil https://t.me/maizil41
+                                                    
+====================================================================================================================================
