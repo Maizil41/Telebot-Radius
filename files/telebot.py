@@ -246,7 +246,7 @@ async def show_menu(update: Update, context: CallbackContext):
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬"""
         button = InlineKeyboardButton(text="Dukung Admin", url="https://saweria.co/MutiaraWrt")
         keyboard = InlineKeyboardMarkup([[button]])
-        await update.message.reply_text(f"▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ {commands}, reply_markup=keyboard")
+        await update.message.reply_text(f"▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ {commands}", reply_markup=keyboard)
     else:
         welcome_message = f"""▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
                    SERVICES MENU
