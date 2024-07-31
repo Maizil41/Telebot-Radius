@@ -12,6 +12,9 @@ opkg install nano git jq sysstat git-http python3 python3-venv python3-pip
 ```
 pip3 install telepot requests python-telegram-bot python-filter pymysql
 ```
+```
+pip install "python-telegram-bot[job-queue]"
+```
 
 ===========================================================================
 ##### CLONE REPOSITORY
