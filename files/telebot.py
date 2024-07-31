@@ -21,13 +21,19 @@ from telegram.ext import Application, Updater, JobQueue, CommandHandler, Callbac
 
 with open("/root/Telebot-Radius/files/auth", "r") as token_file:
     lines = token_file.readlines()
+    
     if len(lines) >= 2:
         TOKEN = lines[0].strip()
-        USER_ID = int(lines[1].strip())
+        
+        try:
+            # Mengambil beberapa ID admin dari baris kedua, jika ada
+            USER_IDS = [int(user_id.strip()) for user_id in lines[1].strip().split(',')]
+        except ValueError as e:
+            print(f"Error parsing user IDs: {e}")
+            USER_IDS = []  # Atau tangani kesalahan sesuai kebutuhan
+
     else:
-        print(
-            "Berkas token harus memiliki setidaknya 2 baris (token dan chat ID admin)."
-        )
+        print("Berkas token harus memiliki setidaknya 2 baris (token dan chat ID admin).")
         exit()
         
 with open("/root/Telebot-Radius/files/ip_address.json", "r") as file:
@@ -60,7 +66,7 @@ POLL_INTERVAL = 5
 MAX_ERRORS = 3
 
 # Daftar ID admin yang diizinkan
-ADMIN_IDS = set([USER_ID])
+ADMIN_IDS = set(USER_IDS)
 
 # State untuk conversation handler
 CHOOSE_DURATION, TOPUP_AMOUNT, LAST_POSITION, ASK_FOR_FILE, PILIH_TINDAKAN, PILIH_JUMLAH, PILIH_DURASI = range(7)
