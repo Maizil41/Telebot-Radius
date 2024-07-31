@@ -42,6 +42,7 @@ sleep 1
 echo "INSTALLING TOOLS ...."
 sleep 2
 pip3 install telepot requests python-telegram-bot python-filter pymysql
+pip install "python-telegram-bot[job-queue]"
 git clone https://github.com/Maizil41/Telebot-Radius.git
 mv /root/Telebot-Radius/files/telebot /etc/init.d/
 mv /root/Telebot-Radius/files/telebot.py /usr/bin/
