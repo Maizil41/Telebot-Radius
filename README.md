@@ -7,15 +7,20 @@
 opkg update
 ```
 ```
-opkg install nano git jq sysstat git-http python3 python3-venv python3-pip
+opkg install python3
 ```
 ```
-pip3 install telepot requests python-telegram-bot python-filter pymysql
+opkg install python3-pip
 ```
 ```
-pip install "python-telegram-bot[job-queue]"
+pip3 install pymysql 
 ```
-
+```
+pip3 install python-telegram-bot
+```
+```
+pip install python-telegram-bot[job-queue]
+```
 ===========================================================================
 ##### CLONE REPOSITORY
 ```
