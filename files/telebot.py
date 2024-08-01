@@ -278,15 +278,27 @@ async def alluser(update: Update, context: CallbackContext):
 
             # Query untuk mengambil daftar pengguna dan status mereka dengan emoji
             query = """
-                SELECT rc.username, 
-                       CASE 
-                           WHEN ra.acctterminatecause = 'Session-Timeout' THEN 'EXPIRED ❌'
-                           WHEN ra.username IS NOT NULL AND ra.acctstoptime IS NULL THEN 'ONLINE 🟢'
-                           ELSE 'OFFLINE 🔴'
-                       END AS status
-                FROM radcheck rc
-                LEFT JOIN radacct ra ON rc.username = ra.username
-                GROUP BY rc.username
+            SELECT
+                r.username,
+                CASE
+                    WHEN latest_acct.username IS NULL THEN 'OFFLINE 🔴'
+                    WHEN latest_acct.acctstoptime IS NOT NULL THEN 'OFFLINE 🔴'
+                    WHEN latest_acct.acctstoptime IS NULL AND latest_acct.acctterminatecause = 'Session-Timeout' THEN 'EXPIRED ❌'
+                    ELSE 'ONLINE 🟢'
+                END AS status
+            FROM radcheck r
+            LEFT JOIN (
+                SELECT username, 
+                       acctstoptime, 
+                       acctterminatecause
+                FROM radacct
+                WHERE (username, acctstarttime) IN (
+                    SELECT username, MAX(acctstarttime)
+                    FROM radacct
+                    GROUP BY username
+                )
+            ) latest_acct
+            ON r.username = latest_acct.username
             """
             # Eksekusi query menggunakan perintah mysql dengan encoding utf8mb4
             result = subprocess.run(
