@@ -269,6 +269,10 @@ async def show_menu(update: Update, context: CallbackContext):
         reply_markup = InlineKeyboardMarkup(keyboard)
         await update.message.reply_text(welcome_message, reply_markup=reply_markup)
 
+def split_message(message, max_length=4096):
+    # Membagi pesan menjadi bagian yang lebih kecil jika diperlukan
+    return [message[i:i+max_length] for i in range(0, len(message), max_length)]
+
 async def alluser(update: Update, context: CallbackContext):
     user_id = update.effective_user.id
     if is_admin(user_id):
@@ -324,22 +328,43 @@ async def alluser(update: Update, context: CallbackContext):
                 data_lines = lines[1:]
                 
                 # Menyusun pesan dengan format yang lebih baik
-                message = """▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+                batch_size = 10
+                message_batches = []
+                current_batch = """▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
                     LIST ALL USER
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ """
-                for line in data_lines:
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬"""
+                
+                for index, line in enumerate(data_lines):
                     fields = line.split("\t")
-                    message += (f"""
+                    current_batch += (f"""
 USERNAME  : {fields[0]}
 STATUS  :  {fields[1]}
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬""")
+                    
+                    # Jika sudah mencapai batch_size, tambahkan batch ke message_batches dan reset
+                    if (index + 1) % batch_size == 0:
+                        message_batches.append(current_batch)
+                        current_batch = """▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬"""
+                
+                # Tambahkan batch terakhir jika ada
+                if current_batch.strip():
+                    message_batches.append(current_batch)
+
+                await context.bot.delete_message(
+                    chat_id=update.effective_chat.id, message_id=sent_message.message_id
+                )
+
+                # Kirim setiap batch pesan
+                for batch in message_batches:
+                    message_parts = split_message(batch)
+                    for part in message_parts:
+                        await update.message.reply_text(part)
             else:
                 message = "𝙏𝙞𝙙𝙖𝙠 𝙖𝙙𝙖 𝙙𝙖𝙩𝙖 𝙥𝙚𝙣𝙜𝙜𝙪𝙣𝙖 𝙨𝙖𝙖𝙩 𝙞𝙣𝙞."
-
-            await context.bot.delete_message(
-                chat_id=update.effective_chat.id, message_id=sent_message.message_id
-            )
-            await update.message.reply_text(message)
+                await context.bot.delete_message(
+                    chat_id=update.effective_chat.id, message_id=sent_message.message_id
+                )
+                await update.message.reply_text(message)
 
         except subprocess.CalledProcessError as e:
             await context.bot.delete_message(
