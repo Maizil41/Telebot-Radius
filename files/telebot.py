@@ -969,19 +969,18 @@ async def delete_user(update: Update, context: CallbackContext):
         await update.message.reply_text("𝙋𝙚𝙧𝙞𝙣𝙩𝙖𝙝 𝙞𝙣𝙞 𝙝𝙖𝙣𝙮𝙖 𝙪𝙣𝙩𝙪𝙠 𝘼𝙙𝙢𝙞𝙣.")
         
 def convert_time_to_seconds(time_str):
-    # Mengambil angka dan unit dari input, misal "9JAM"
-    time_value = int(time_str[:-3])
-    time_unit = time_str[-3:].upper()
-
-    # Konversi ke detik berdasarkan unit
-    if time_unit == 'JAM':
-        return time_value * 3600  # 1 jam = 3600 detik
-    elif time_unit == 'MENIT':
-        return time_value * 60    # 1 menit = 60 detik
-    elif time_unit == 'HARI':
-        return time_value * 86400  # 1 hari = 86400 detik
+    if 'HARI' in time_str:
+        hours = int(time_str.replace('HARI', ''))
+        return hours * 3600
+    elif 'MENIT' in time_str:
+        minutes = int(time_str.replace('MENIT', ''))
+        return minutes * 60
+    elif 'JAM' in time_str:
+        jam = int(time_str.replace('JAM', ''))
+        return jam * 3600
+    # Tambahkan konversi lainnya jika diperlukan
     else:
-        raise ValueError("Unit waktu tidak dikenal. Gunakan JAM, MENIT, atau HARI.")
+        raise ValueError("Format waktu tidak dikenali.")
 
 def convert_bandwidth_to_bytes(bandwidth_str):
     if bandwidth_str[-1].upper() == 'K':
