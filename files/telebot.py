@@ -61,6 +61,7 @@ LAST_POSITION_FILE = "/root/Telebot-Radius/files/bot.pid"
 FILE_PATH = "/root/Telebot-Radius/files/radius.sql"
 LOG_FILE_PATH = "/tmp/log/radius.log"
 DEFAULT_FILE_UPLOAD_PATH  = "/root/"
+QUANTITY_KEYBOARD = "/root/Telebot-Radius/files/quantity_keyboard.json"
 
 POLL_INTERVAL = 5
 MAX_ERRORS = 3
@@ -87,6 +88,22 @@ def read_profiles():
 def write_profiles(profiles):
     with open(PROFILES_JSON_FILE, "w") as file:
         json.dump(profiles, file, indent=4)
+
+# Fungsi untuk memuat data keyboard dari file JSON
+def load_keyboard_quantity(filename):
+    with open(QUANTITY_KEYBOARD, 'r') as file:
+        data = json.load(file)
+    return data['keyboard']
+    
+# Fungsi untuk mengonversi data JSON ke dalam format InlineKeyboardMarkup
+def create_keyboard_quantity(keyboard_data):
+    keyboard = [[InlineKeyboardButton(button['text'], callback_data=button['callback_data'])
+                 for button in row] for row in keyboard_data]
+    return InlineKeyboardMarkup(keyboard)
+    
+# Memuat data keyboard dari file JSON
+quantity_keyboard_data = load_keyboard_quantity('quantity_keyboard.json')
+quantity_keyboard_markup = create_keyboard_quantity(quantity_keyboard_data)
 
 def generate_random_string(length=4):
     characters = string.ascii_uppercase + string.digits
