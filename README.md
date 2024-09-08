@@ -3,7 +3,10 @@
 </h1>
 
 <div align="center">
- <a target="_blank" href="https://github.com/Maizil41/Telebot-Radius/releases"><img src="https://img.shields.io/github/clone/Maizil41/Telebot-Radius/total?label=Total%20Download&labelColor=blue&style=for-the-badge"></a>
+ <a target="_blank" href="https://github.com/Maizil41/Telebot-Radius">
+    <img src="https://img.shields.io/github/downloads/Maizil41/Telebot-Radius/total?label=Total%20Clones&labelColor=blue&style=for-the-badge" alt="Total Clones">
+</a>
+
  <a target="_blank" href="https://t.me/mutiara_wrt">
   <img src="https://img.shields.io/badge/Telegram-Join%20Us-blue?style=for-the-badge&logo=telegram" alt="Join us on Telegram">
 </a>
