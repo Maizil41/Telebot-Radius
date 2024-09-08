@@ -46,8 +46,7 @@ cd /tmp && curl -sLko install https://raw.githubusercontent.com/Maizil41/Telebot
 ```
 */30 * * * * service telebot restart
 ```
-*
-*
+
 ##### ENABLE SERVICE 
 
 ```
