@@ -2,13 +2,9 @@
   TELEGRAM BOT FOR RADIUS OPENWRT 
 </h1>
 
-<a target="_blank" href="https://github.com/Maizil41/Telebot-Radius">
-    <img src="https://img.shields.io/github/stars/Maizil41/Telebot-Radius?label=Total%20Stars&style=for-the-badge" alt="Total Stars">
-</a>
-
- <a target="_blank" href="https://t.me/mutiara_wrt">
-  <img src="https://img.shields.io/badge/Telegram-Join%20Us-blue?style=for-the-badge&logo=telegram" alt="Join us on Telegram">
-</a>
+<div align="center">
+ <a><img src="https://img.shields.io/badge/Version-1.1-blue"></a>
+ <a target="_blank" href="https://t.me/mutiara_wrt"><img src="https://img.shields.io/badge/Telegram-Join%20Us-blue?logo=telegram" alt="Join us on Telegram"></a>
 
 ##### MANUAL INSTALL
 ```
