@@ -2079,11 +2079,11 @@ async def send_login_link(query, code):
 
     await query.message.edit_reply_markup(reply_markup=reply_markup)
 
-def get_duration_data_from_db():
+def get_duration_data_from_db(is_admin=False):
     connection = get_db_connection()
     try:
         with connection.cursor() as cursor:
-            cursor.execute("""
+            query = """
                 SELECT DISTINCT groups.groupname, billing_plans.planCost
                 FROM (
                     SELECT groupname FROM radgroupcheck
@@ -2091,7 +2091,12 @@ def get_duration_data_from_db():
                     SELECT groupname FROM radgroupreply
                 ) AS groups
                 JOIN billing_plans ON groups.groupname = billing_plans.planName
-            """)
+            """
+            # Tambahkan filter jika bukan admin
+            if not is_admin:
+                query += " WHERE billing_plans.planCost > 0"
+            
+            cursor.execute(query)
             # Fetch all rows from the query result
             results = cursor.fetchall()
             
@@ -2138,8 +2143,8 @@ async def choose_duration(update: Update, context: CallbackContext):
     await query.message.edit_text(reply_message, reply_markup=reply_markup)
     return CHOOSE_DURATION
 
-def create_cost_keyboard():
-    groupnames_with_cost = get_duration_data_from_db()
+def create_cost_keyboard(is_admin=False):
+    groupnames_with_cost = get_duration_data_from_db(is_admin=is_admin)
     
     keyboard = []
     row = []
