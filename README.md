@@ -8,7 +8,6 @@
   <img src="https://img.shields.io/badge/Telegram-Join%20Us-blue?style=for-the-badge&logo=telegram" alt="Join us on Telegram">
 </a>
 
-========================================================================
 ##### MANUAL INSTALL
 ```
 opkg update
@@ -22,7 +21,7 @@ pip3 install pymysql python-telegram-bot
 ```
 pip install python-telegram-bot[job-queue]
 ```
-===========================================================================
+
 ##### CLONE REPOSITORY
 ```
 git clone https://github.com/Maizil41/Telebot-Radius.git
@@ -35,15 +34,13 @@ mv /root/Telebot-Radius/files/telebot /etc/init.d/ && mv /root/Telebot-Radius/fi
 ```
 nano /root/Telebot-Radius/files/auth
 ```
-===========================================================================
+
 ##### AUTO INSTALLER
 
 ```
 cd /tmp && curl -sLko install https://raw.githubusercontent.com/Maizil41/Telebot-Radius/main/installer.sh && bash install
 ```
-*
-*
-===========================================================================
+
 ##### AUTO RESTART
 **COPY PASTE TO** `SCHEDULED TASKS`
 ```
@@ -74,6 +71,3 @@ service telebot restart
 ```
 service telebot stop
 ```
-*
-*
-===========================================================================
