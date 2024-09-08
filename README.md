@@ -1,6 +1,14 @@
-### TELEGRAM BOT FOR OPENWRT DALORADIUS
+<h1 align="center">
+  TELEGRAM BOT FOR RADIUS OPENWRT 
+</h1>
 
-* [**OWNER**](https://t.me/maizil41)
+<div align="center">
+ <a target="_blank" href="https://github.com/Maizil41/Telebot-Radius/releases"><img src="https://img.shields.io/github/downloads/Maizil41/Telebot-Radius/total?label=Total%20Download&labelColor=blue&style=for-the-badge"></a>
+ <a target="_blank" href="https://t.me/mutiara_wrt">
+  <img src="https://img.shields.io/badge/Telegram-Join%20Us-blue?style=for-the-badge&logo=telegram" alt="Join us on Telegram">
+</a>
+
+</div>
 ========================================================================
 ##### MANUAL INSTALL
 ```
