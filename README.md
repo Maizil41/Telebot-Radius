@@ -4,6 +4,7 @@
 
 <div align="center">
  <a><img src="https://img.shields.io/badge/Version-2.1-blue"></a>
+ <br/>
  <a target="_blank" href="https://t.me/mutiara_wrt"><img src="https://img.shields.io/badge/Telegram-Join%20Us-blue?logo=telegram" alt="Join us on Telegram"></a>
 
 ##### MANUAL INSTALL
