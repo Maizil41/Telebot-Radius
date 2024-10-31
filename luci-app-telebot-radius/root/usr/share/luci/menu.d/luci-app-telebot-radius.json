@@ -1,0 +1,31 @@
+{
+	"admin/services/telebot": {
+		"title": "Telebot",
+		"order": 10,
+		"action": {
+			"type": "firstchild"
+		},
+		"depends": {
+			"acl": [ "luci-app-telebot-radius" ],
+			"uci": { "telebot": true }
+		}
+	},
+
+	"admin/services/telebot/setting": {
+		"title": "Telebot Settings",
+		"order": 10,
+		"action": {
+			"type": "cbi",
+			"path": "telebot/telebot"
+		}
+	},
+
+	"admin/services/telebot/logs": {
+		"title": "Telebot Logs",
+		"order": 20,
+		"action": {
+			"type": "cbi",
+			"path": "telebot/telebot_log"
+		}
+	}
+}

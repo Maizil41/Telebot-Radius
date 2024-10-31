@@ -1,0 +1,11 @@
+{
+	"luci-app-telebot-radius": {
+		"description": "Grant UCI access for luci-app-telebot-radius",
+		"read": {
+			"uci": [ "telebot-radius" ]
+		},
+		"write": {
+			"uci": [ "telebot-radius" ]
+		}
+	}
+}

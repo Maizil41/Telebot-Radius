@@ -1,0 +1,6 @@
+#!/bin/sh
+# Post-installation script for installing Python packages
+
+# Ensure that the environment is set up for Python and pip
+echo "Installing Python dependencies..."
+pip install pymysql python-telegram-bot python-telegram-bot[job-queue]

@@ -1,0 +1,10 @@
+
+config telebot
+	option enabled '0'
+	option token '6793968084:AAE1I59uRsDJTYgfvYCQ09WbDF82eNXXXXX'
+	option userid '54628XXXXX'
+	option ip_chilli '10.10.10.1'
+	option ip_lan '192.168.1.1'
+	option no_ewallet '0853-7268-7484'
+	option username 'Maizil41'
+	option geocode '38.87185673666062, -77.056269350381'
