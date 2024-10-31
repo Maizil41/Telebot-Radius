@@ -1,6 +1,15 @@
 #!/bin/sh
 # Post-installation script for installing Python packages
 
-# Ensure that the environment is set up for Python and pip
 echo "Installing Python dependencies..."
 pip install pymysql python-telegram-bot python-telegram-bot[job-queue]
+
+sleep 1
+
+echo "Change permission..."
+chmod +x /usr/bin/telebot.py
+
+sleep 1
+
+echo "Remove uci-defaults..."
+rm -rf /etc/uci-defaults/99-luci-app-telebot-radius
