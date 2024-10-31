@@ -1,0 +1,39 @@
+name: Build Packages
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'luci-app-telebot-radius/**'
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build
+        uses: openwrt/gh-action-sdk@main
+        env:
+          ARCH: x86_64-openwrt-21.02
+          PACKAGES: luci-app-telebot-radius
+          NO_REFRESH_CHECK: true
+
+      - name: Find
+        run: |
+          FILE_PATH=$(find -name "luci-app-telebot-*.ipk")
+          echo "FILE_PATH=$FILE_PATH" >> $GITHUB_ENV
+          echo -e "FILE_PATH path: $FILE_PATH"
+
+      - name: Upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: x86_64-openwrt-21.02
+          path: ${{ env.FILE_PATH }}
