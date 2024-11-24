@@ -1,7 +1,5 @@
 <div align="center">
   <h1>LuCI support for Telebot-Radius</h1>
-</div>
-
 <hr/>
 
 <div align="center">
