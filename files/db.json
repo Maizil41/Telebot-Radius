@@ -1,6 +1,6 @@
 {
     "DB_HOST": "127.0.0.1",
-    "DB_USER": "radius",
-    "DB_PASS": "radius",
-    "DB_NAME": "radius"
+    "DB_USER": "radmon",
+    "DB_PASS": "radmon",
+    "DB_NAME": "radmon"
 }
